@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>ÚNICO Agencia</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="ÚNICO. Agencia de redes a medida para emprendimientos. Hacemos lo que tu marca necesita: ideas, rodaje, edición, diseño, publicación y comunidad.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Layout: black editorial scroll. Stacked condensed headlines, reels in 9:16 frames, one paper-white band for the services menu. */
+:root{
+  --ink:#0A0A0B;        /* page */
+  --ink-2:#141416;      /* raised surfaces */
+  --line:rgba(245,245,247,.14);
+  --paper:#F5F5F7;      /* text on dark, light band bg */
+  --mute:#8C8C92;       /* secondary text */
+  --mute-dark:#5E5E64;  /* secondary text on paper */
+  --display:"Archivo","Arial Narrow",Impact,sans-serif;
+  --serif:"Instrument Serif","Times New Roman",Georgia,serif;
+  --sans:"Inter",-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --max:1440px;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--paper);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--ink)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--paper);outline-offset:3px}
+
+.wrap{max-width:var(--max);margin:0 auto;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+@media (min-width:900px){.wrap{padding-left:max(40px, env(safe-area-inset-left, 0px));padding-right:max(40px, env(safe-area-inset-right, 0px))}}
+
+.cond{font-family:var(--display);font-stretch:62%;font-variation-settings:"wdth" 62;font-weight:800;text-transform:uppercase;letter-spacing:-.035em;line-height:.86}
+.serif{font-family:var(--serif);font-weight:400;letter-spacing:-.02em}
+.label{font-family:var(--display);font-stretch:62%;font-variation-settings:"wdth" 62;font-weight:700;text-transform:uppercase;letter-spacing:.04em;font-size:15px}
+
+/* Header */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:color-mix(in srgb,var(--ink) 82%,transparent);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:64px}
+.logo{font-size:30px;text-decoration:none;line-height:1}
+.logo sup{font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:0;vertical-align:top;margin-left:2px}
+.nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0}
+.nav ul a{text-decoration:none;color:var(--mute);transition:color .2s}
+.nav ul a:hover{color:var(--paper)}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--paper);color:var(--ink);text-decoration:none;padding:10px 16px;border-radius:999px;font-family:var(--display);font-stretch:62%;font-variation-settings:"wdth" 62;font-weight:800;text-transform:uppercase;letter-spacing:.03em;font-size:16px;line-height:1;transition:transform .2s}
+.btn:hover{transform:translateY(-1px)}
+@media (max-width:820px){.nav ul{display:none}}
+
+/* Hero */
+.hero{padding-block:clamp(48px,9vw,120px) clamp(40px,6vw,72px)}
+.hero h1{font-size:clamp(64px,15.5vw,236px);margin:0;text-wrap:balance}
+.hero h1 .o{color:transparent;-webkit-text-stroke:1.5px var(--paper)}
+.hero h1 sup{font-family:var(--sans);font-size:.12em;font-weight:500;vertical-align:top;letter-spacing:0;position:relative;top:.35em}
+.hero-foot{display:grid;grid-template-columns:1fr;gap:28px;margin-top:clamp(28px,4vw,56px);align-items:end}
+.hero-foot p{margin:0;max-width:32ch;font-size:clamp(26px,2.8vw,40px);line-height:1.08}
+.hero-foot .meta{display:flex;flex-wrap:wrap;gap:10px 28px;color:var(--mute);font-size:14px}
+.hero-foot .meta span{display:flex;align-items:center;gap:8px}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--paper);display:inline-block}
+@media (min-width:900px){.hero-foot{grid-template-columns:1.2fr 1fr}.hero-foot .meta{justify-content:flex-end}}
+
+/* Logo marquee */
+.marquee{border-block:1px solid var(--line);overflow:hidden;padding-block:22px;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.track{display:flex;gap:72px;width:max-content;animation:slide 32s linear infinite}
+.track span{font-size:clamp(28px,3.4vw,44px);white-space:nowrap;color:var(--paper);opacity:.9}
+.track .s{font-family:var(--serif);font-style:italic;text-transform:none;letter-spacing:-.01em;font-weight:400;opacity:.55}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* Intro statement */
+.intro{padding-block:clamp(72px,10vw,140px)}
+.intro .grid{display:grid;gap:40px}
+.intro h2{margin:0;font-size:clamp(36px,5vw,72px);line-height:1.02;max-width:18ch;text-wrap:balance}
+.intro h2 em{color:var(--mute)}
+.intro p{margin:0;color:var(--mute);max-width:52ch;font-size:17px}
+.intro p strong{color:var(--paper);font-weight:500}
+@media (min-width:900px){.intro .grid{grid-template-columns:1.4fr 1fr;align-items:end}}
+
+/* Shared: video slot that falls back to a designed face until the file loads */
+.media{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s;background:var(--ink)}
+.ready .media{opacity:1}
+.ready .fallback{visibility:hidden}
+
+/* Work */
+.work{padding-block:0 clamp(72px,10vw,140px)}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:28px}
+.sec-head h2{margin:0;font-size:clamp(48px,7vw,104px)}
+.sec-head p{margin:0;color:var(--mute);max-width:38ch}
+.cases{display:grid;grid-template-columns:1fr;gap:16px}
+@media (min-width:720px){.cases{grid-template-columns:repeat(3,1fr)}}
+.case{display:flex;flex-direction:column;text-decoration:none;min-width:0}
+.poster{position:relative;aspect-ratio:4/5;max-width:100%;background:var(--ink-2);border:1px solid var(--line);overflow:hidden;display:flex}
+.rail{flex:0 0 38px;background:var(--paper);color:var(--ink);overflow:hidden;position:relative;z-index:2}
+.rail .v{position:absolute;left:50%;top:0;writing-mode:vertical-rl;transform:translateX(-50%) rotate(180deg);white-space:nowrap;font-size:22px;letter-spacing:.02em;animation:rise 18s linear infinite}
+@keyframes rise{from{transform:translateX(-50%) rotate(180deg) translateY(0)}to{transform:translateX(-50%) rotate(180deg) translateY(-50%)}}
+.face{flex:1;min-width:0;position:relative;overflow:hidden}
+.face .fallback{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:22px;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.face .media{transition:opacity .5s,transform .6s cubic-bezier(.2,.7,.2,1)}
+.face .top{display:flex;justify-content:space-between;gap:12px;color:var(--mute);font-size:13px}
+.face .big{font-size:clamp(84px,9vw,148px)}
+.face .big small{font-size:.42em;letter-spacing:-.02em}
+.face .what{font-size:clamp(22px,2vw,28px);line-height:1.1;margin-top:8px}
+.grain{position:absolute;inset:0;pointer-events:none;background:
+  radial-gradient(120% 80% at 100% 0%,rgba(245,245,247,.10),transparent 55%),
+  radial-gradient(90% 60% at 0% 100%,rgba(245,245,247,.05),transparent 60%)}
+.face .badge{position:absolute;left:14px;bottom:14px;z-index:2;display:none;gap:8px;align-items:center;background:rgba(10,10,11,.72);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:12px}
+.ready .badge{display:inline-flex}
+.case:hover .fallback,.case:hover .media{transform:scale(1.025)}
+.cap{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding-top:14px;border-bottom:1px solid var(--line);padding-bottom:14px}
+.cap .serif{font-size:24px;line-height:1.1}
+.tags{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.tag{font-size:12px;border:1px solid var(--line);border-radius:999px;padding:3px 9px;color:var(--mute);white-space:nowrap}
+.case .go{font-size:13px;color:var(--mute);padding-top:10px;display:flex;justify-content:space-between;gap:12px}
+.case:hover .go{color:var(--paper)}
+.src{margin-top:18px;font-size:12px;color:var(--mute)}
+
+/* Reels */
+.reels{padding-block:0 clamp(72px,10vw,140px)}
+.reels .sec-head h2 em{font-family:var(--serif);font-style:italic;text-transform:none;font-weight:400;letter-spacing:-.02em}
+.strip{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(180px,1fr);gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px;scrollbar-width:thin}
+@media (max-width:719px){.strip{grid-auto-columns:62%}}
+.reel{scroll-snap-align:start;text-decoration:none;display:flex;flex-direction:column;gap:10px;min-width:0}
+.frame{position:relative;aspect-ratio:9/16;max-width:100%;border-radius:18px;overflow:hidden;background:var(--ink-2);border:1px solid var(--line)}
+.frame .fallback{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:16px}
+.frame .who{font-size:13px;color:var(--mute)}
+.frame .play{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;align-self:center}
+.frame .play::before{content:"";border-left:13px solid var(--paper);border-top:8px solid transparent;border-bottom:8px solid transparent;margin-left:4px}
+.frame .views{font-size:clamp(40px,4vw,56px)}
+.frame .views small{display:block;font-family:var(--serif);font-size:18px;text-transform:none;letter-spacing:-.01em;font-weight:400;color:var(--mute);margin-top:6px}
+.frame .overlay{position:absolute;inset:auto 0 0 0;z-index:2;padding:12px 14px;background:linear-gradient(transparent,rgba(10,10,11,.85));display:none;justify-content:space-between;font-size:12px}
+.ready .overlay{display:flex}
+.reel .meta{display:flex;justify-content:space-between;gap:10px;font-size:13px;color:var(--mute)}
+.reel:hover .meta{color:var(--paper)}
+.reel:hover .frame{border-color:rgba(245,245,247,.4)}
+
+/* Statement */
+.statement{padding-block:clamp(80px,11vw,160px);text-align:center;border-top:1px solid var(--line)}
+.statement h2{margin:0 auto;font-size:clamp(52px,9.6vw,150px);max-width:12ch;text-wrap:balance}
+.statement h2 mark{background:var(--paper);color:var(--ink);padding:0 .08em;display:inline-block;line-height:.92}
+.statement .serif{font-size:clamp(28px,3.4vw,48px);margin:26px 0 0;color:var(--paper)}
+.statement p.body{max-width:58ch;margin:22px auto 0;color:var(--mute)}
+
+/* Services (paper band) */
+.caps{background:var(--paper);color:var(--ink)}
+.caps .wrap{padding-block:clamp(72px,9vw,128px)}
+.caps .label{color:var(--mute-dark)}
+.caps .grid{display:grid;gap:40px;margin-top:20px}
+@media (min-width:960px){.caps .grid{grid-template-columns:1.25fr 1fr;align-items:center}}
+.words{display:flex;flex-direction:column;align-items:flex-start;list-style:none;margin:0;padding:0}
+.words button{all:unset;cursor:pointer;font-family:var(--display);font-stretch:62%;font-variation-settings:"wdth" 62;font-weight:800;text-transform:uppercase;letter-spacing:-.035em;line-height:.9;font-size:clamp(50px,7.6vw,116px);color:transparent;-webkit-text-stroke:1.2px rgba(10,10,11,.28);transition:color .35s,-webkit-text-stroke-color .35s}
+.words button:hover{-webkit-text-stroke-color:var(--ink)}
+.words button[aria-selected="true"]{color:var(--ink);-webkit-text-stroke-color:var(--ink)}
+.words button:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
+.panel{max-width:44ch}
+.panel .k{font-family:var(--serif);font-style:italic;font-size:clamp(30px,3vw,42px);line-height:1.05;margin:0 0 16px}
+.panel p{margin:0;color:var(--mute-dark);font-size:17px}
+.panel ul{margin:22px 0 0;padding:0;list-style:none;display:grid;gap:8px}
+.panel li{display:flex;gap:10px;align-items:baseline;border-top:1px solid rgba(10,10,11,.12);padding-top:8px;font-size:15px}
+.panel li::before{content:"";width:6px;height:6px;background:var(--ink);border-radius:50%;flex:0 0 6px;transform:translateY(-2px)}
+.caps .note{margin-top:40px;display:grid;gap:16px;border-top:1px solid rgba(10,10,11,.14);padding-top:24px}
+@media (min-width:900px){.caps .note{grid-template-columns:1fr 1fr;align-items:baseline}}
+.caps .note .serif{font-size:clamp(26px,2.6vw,36px);line-height:1.08;margin:0}
+.caps .note p{margin:0;color:var(--mute-dark);font-size:16px;max-width:52ch}
+
+/* Method */
+.method{padding-block:clamp(80px,10vw,140px)}
+.method .head{display:grid;gap:24px;margin-bottom:48px}
+.method h2{margin:0;font-size:clamp(46px,6vw,88px)}
+.method h2 sup{font-family:var(--sans);font-size:.2em;font-weight:500;vertical-align:top;letter-spacing:0}
+.method .head .serif{font-size:clamp(26px,2.6vw,36px);margin:0;color:var(--mute)}
+@media (min-width:900px){.method .head{grid-template-columns:1fr 1fr;align-items:end}}
+.weeks{display:grid;grid-template-columns:1fr;border-top:1px solid var(--line)}
+@media (min-width:640px){.weeks{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1080px){.weeks{grid-template-columns:repeat(4,1fr)}}
+.week{padding:24px 22px 28px 0;border-bottom:1px solid var(--line);min-width:0}
+@media (min-width:640px){.week{padding-left:22px;border-left:1px solid var(--line)}.week:nth-child(odd){border-left:0;padding-left:0}}
+@media (min-width:1080px){.week:nth-child(odd){border-left:1px solid var(--line);padding-left:22px}.week:first-child{border-left:0;padding-left:0}}
+.week .n{font-size:15px;color:var(--mute);font-variant-numeric:tabular-nums}
+.week h3{margin:14px 0 10px;font-size:clamp(34px,3.2vw,48px)}
+.week p{margin:0;color:var(--mute);font-size:15px;max-width:34ch}
+.method .loop{margin-top:28px;color:var(--mute);font-size:14px;display:flex;align-items:center;gap:10px}
+
+/* Contact */
+.talk{border-top:1px solid var(--line);padding-block:clamp(80px,11vw,160px)}
+.talk .grid{display:grid;gap:40px}
+@media (min-width:960px){.talk .grid{grid-template-columns:1.3fr 1fr;align-items:end}}
+.talk h2{margin:0;font-size:clamp(96px,16vw,248px);line-height:.85;letter-spacing:-.04em}
+.talk h2 em{font-style:italic}
+.talk .side p{margin:0 0 22px;color:var(--mute);max-width:40ch;font-size:17px}
+.contact-rows{display:grid;border-top:1px solid var(--line)}
+.row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-block:14px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.row .k{color:var(--mute);font-size:13px}
+.row .v{font-family:var(--display);font-stretch:62%;font-variation-settings:"wdth" 62;font-weight:700;font-size:26px;letter-spacing:0;user-select:all;text-transform:uppercase}
+.copy{all:unset;cursor:pointer;font-size:12px;color:var(--mute);border:1px solid var(--line);border-radius:999px;padding:4px 10px}
+.copy:hover{color:var(--paper)}
+.copy:focus-visible{outline:2px solid var(--paper);outline-offset:2px}
+
+/* Footer */
+footer{border-top:1px solid var(--line)}
+footer .wrap{padding-block:56px 32px}
+.f-grid{display:grid;gap:36px;grid-template-columns:1fr 1fr}
+@media (min-width:900px){.f-grid{grid-template-columns:1.6fr repeat(4,1fr)}}
+.f-logo{grid-column:1/-1}
+@media (min-width:900px){.f-logo{grid-column:auto}}
+.f-logo .cond{font-size:clamp(72px,8vw,120px);display:block}
+.f-logo p{color:var(--mute);margin:14px 0 0;max-width:30ch;font-size:14px}
+.f-col h4{margin:0 0 14px;font-family:var(--serif);font-weight:400;font-size:24px;letter-spacing:-.01em}
+.f-col ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:14px}
+.f-col a{text-decoration:none;color:var(--mute)}
+.f-col a:hover{color:var(--paper)}
+.f-base{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:56px;padding-top:20px;border-top:1px solid var(--line);color:var(--mute);font-size:12px}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .track,.rail .v{animation:none}
+  .fallback,.media,.words button,.btn{transition:none}
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a href="#top" class="logo cond">Único<sup>®</sup></a>
+    <ul>
+      <li><a href="#trabajos">Trabajos</a></li>
+      <li><a href="#reels">Reels</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#como">Cómo trabajamos</a></li>
+    </ul>
+    <a href="#hablemos" class="btn">Hablemos</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <h1 class="cond">Redes<br>hechas a<br><span class="o">medida</span><sup>®</sup></h1>
+      <div class="hero-foot">
+        <p class="serif">Hacemos lo que tu emprendimiento necesita. Un paquete gráfico, edición de reels o tus redes de punta a punta.</p>
+        <div class="meta">
+          <span><i class="dot"></i>Montevideo, Uruguay</span>
+          <span>Instagram · TikTok · Diseño · Web</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" id="clientes" aria-label="Clientes: Yipio, Matu Venao y Delipop">
+    <div class="track" aria-hidden="true">
+      <span class="cond">Yipio</span><span class="s">trabajamos con</span><span class="cond">Matu Venao</span><span class="s">trabajamos con</span><span class="cond">Delipop</span><span class="s">trabajamos con</span>
+      <span class="cond">Yipio</span><span class="s">trabajamos con</span><span class="cond">Matu Venao</span><span class="s">trabajamos con</span><span class="cond">Delipop</span><span class="s">trabajamos con</span>
+      <span class="cond">Yipio</span><span class="s">trabajamos con</span><span class="cond">Matu Venao</span><span class="s">trabajamos con</span><span class="cond">Delipop</span><span class="s">trabajamos con</span>
+      <span class="cond">Yipio</span><span class="s">trabajamos con</span><span class="cond">Matu Venao</span><span class="s">trabajamos con</span><span class="cond">Delipop</span><span class="s">trabajamos con</span>
+    </div>
+  </div>
+
+  <section class="intro">
+    <div class="wrap grid">
+      <h2 class="serif">Cada emprendimiento es único. <em>Su plan de redes también.</em></h2>
+      <p>No vendemos paquetes cerrados. Primero entendemos tu negocio y qué te está faltando. <strong>Después hacemos exactamente eso</strong>: puede ser solo la edición, solo el diseño o todo el proceso, de la idea al reporte.</p>
+    </div>
+  </section>
+
+  <section class="work" id="trabajos">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="cond">Trabajos</h2>
+        <p>Creadores, artistas y marcas que ya confían en nosotros, cada uno con lo que necesita.</p>
+      </div>
+      <div class="cases">
+        <a class="case" href="https://www.instagram.com/yipio/" target="_blank" rel="noopener">
+          <div class="poster">
+            <div class="rail" aria-hidden="true"><span class="v cond">Yipio · Yipio · Yipio · Yipio · Yipio · Yipio · Yipio · Yipio · Yipio · Yipio · Yipio · Yipio · Yipio · Yipio · Yipio · Yipio ·</span></div>
+            <div class="face slot">
+              <div class="fallback">
+                <div class="grain"></div>
+                <div class="top"><span>@yipio</span><span>Comedia</span></div>
+                <div>
+                  <div class="big cond">675<small>K</small></div>
+                  <div class="what serif">seguidores en Instagram</div>
+                </div>
+              </div>
+              <video class="media" muted loop playsinline preload="metadata" src="media/yipio-1.mp4" aria-label="Reel de Yipio"></video>
+              <span class="badge">675K seguidores</span>
+            </div>
+          </div>
+          <div class="cap"><span class="serif">Yipio</span><span class="tags"><span class="tag">Redes</span><span class="tag">Web</span></span></div>
+          <span class="go"><span>Comediante y creadora</span><span>Ver perfil ↗</span></span>
+        </a>
+
+        <a class="case" href="https://www.instagram.com/matuvenao/" target="_blank" rel="noopener">
+          <div class="poster">
+            <div class="rail" aria-hidden="true"><span class="v cond">Matu Venao · Matu Venao · Matu Venao · Matu Venao · Matu Venao · Matu Venao · Matu Venao · Matu Venao · Matu Venao · Matu Venao ·</span></div>
+            <div class="face slot">
+              <div class="fallback">
+                <div class="grain"></div>
+                <div class="top"><span>@matuvenao</span><span>Stand-up</span></div>
+                <div>
+                  <div class="big cond">168<small>K</small></div>
+                  <div class="what serif">seguidores y gira Ranga 2026</div>
+                </div>
+              </div>
+              <video class="media" muted loop playsinline preload="metadata" src="media/matu-1.mp4" aria-label="Reel de Matu Venao"></video>
+              <span class="badge">168K seguidores</span>
+            </div>
+          </div>
+          <div class="cap"><span class="serif">Matu Venao</span><span class="tags"><span class="tag">Redes</span><span class="tag">Web</span></span></div>
+          <span class="go"><span>Comediante de stand-up</span><span>Ver perfil ↗</span></span>
+        </a>
+
+        <a class="case" href="https://delipop.com.uy/" target="_blank" rel="noopener">
+          <div class="poster">
+            <div class="rail" aria-hidden="true"><span class="v cond">Delipop · Delipop · Delipop · Delipop · Delipop · Delipop · Delipop · Delipop · Delipop · Delipop · Delipop · Delipop · Delipop · Delipop ·</span></div>
+            <div class="face">
+              <div class="fallback">
+                <div class="grain"></div>
+                <div class="top"><span>delipop.com.uy</span><span>Eventos</span></div>
+                <div>
+                  <div class="big cond">Web</div>
+                  <div class="what serif">pop para marcas y eventos corporativos</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cap"><span class="serif">Delipop</span><span class="tags"><span class="tag">Web</span></span></div>
+          <span class="go"><span>Marketing experiencial</span><span>Ver sitio ↗</span></span>
+        </a>
+      </div>
+      <p class="src">Seguidores según los perfiles públicos de Instagram, noviembre 2026.</p>
+    </div>
+  </section>
+
+  <section class="reels" id="reels">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="cond">Reels <em>en acción</em></h2>
+        <p>Una selección de lo que publicamos con Yipio y Matu Venao. Tocá cualquiera para verlo en Instagram.</p>
+      </div>
+      <div class="strip" role="list">
+        <a class="reel" role="listitem" href="https://www.instagram.com/yipio/reel/De7_aDFsdtw/" target="_blank" rel="noopener">
+          <div class="frame slot">
+            <div class="fallback"><div class="grain"></div><span class="who">@yipio</span><span class="play" aria-hidden="true"></span><span class="views cond">348K<small>reproducciones</small></span></div>
+            <video class="media" muted loop playsinline preload="metadata" src="media/yipio-1.mp4" aria-label="Reel de Yipio"></video>
+            <span class="overlay"><span>@yipio</span><span>348K ▶</span></span>
+          </div>
+          <span class="meta"><span>Yipio</span><span>Ver ↗</span></span>
+        </a>
+        <a class="reel" role="listitem" href="https://www.instagram.com/matuvenao/reel/DfgAIE7ksrn/" target="_blank" rel="noopener">
+          <div class="frame slot">
+            <div class="fallback"><div class="grain"></div><span class="who">@matuvenao</span><span class="play" aria-hidden="true"></span><span class="views cond">Ranga<small>gira 2026</small></span></div>
+            <video class="media" muted loop playsinline preload="metadata" src="media/matu-1.mp4" aria-label="Reel de Matu Venao"></video>
+            <span class="overlay"><span>@matuvenao</span><span>▶</span></span>
+          </div>
+          <span class="meta"><span>Matu Venao</span><span>Ver ↗</span></span>
+        </a>
+        <a class="reel" role="listitem" href="https://www.instagram.com/yipio/reel/De0NteVRfuw/" target="_blank" rel="noopener">
+          <div class="frame slot">
+            <div class="fallback"><div class="grain"></div><span class="who">@yipio</span><span class="play" aria-hidden="true"></span><span class="views cond">334K<small>reproducciones</small></span></div>
+            <video class="media" muted loop playsinline preload="metadata" src="media/yipio-2.mp4" aria-label="Reel de Yipio"></video>
+            <span class="overlay"><span>@yipio</span><span>334K ▶</span></span>
+          </div>
+          <span class="meta"><span>Yipio</span><span>Ver ↗</span></span>
+        </a>
+        <a class="reel" role="listitem" href="https://www.instagram.com/matuvenao/reel/DfavuEAjQFR/" target="_blank" rel="noopener">
+          <div class="frame slot">
+            <div class="fallback"><div class="grain"></div><span class="who">@matuvenao</span><span class="play" aria-hidden="true"></span><span class="views cond">Stand<small>up comedy</small></span></div>
+            <video class="media" muted loop playsinline preload="metadata" src="media/matu-2.mp4" aria-label="Reel de Matu Venao"></video>
+            <span class="overlay"><span>@matuvenao</span><span>▶</span></span>
+          </div>
+          <span class="meta"><span>Matu Venao</span><span>Ver ↗</span></span>
+        </a>
+        <a class="reel" role="listitem" href="https://www.instagram.com/yipio/reel/DfN6I65R-sp/" target="_blank" rel="noopener">
+          <div class="frame slot">
+            <div class="fallback"><div class="grain"></div><span class="who">@yipio</span><span class="play" aria-hidden="true"></span><span class="views cond">245K<small>reproducciones</small></span></div>
+            <video class="media" muted loop playsinline preload="metadata" src="media/yipio-3.mp4" aria-label="Reel de Yipio"></video>
+            <span class="overlay"><span>@yipio</span><span>245K ▶</span></span>
+          </div>
+          <span class="meta"><span>Yipio</span><span>Ver ↗</span></span>
+        </a>
+        <a class="reel" role="listitem" href="https://www.instagram.com/matuvenao/reel/DfVmDGDgC3o/" target="_blank" rel="noopener">
+          <div class="frame slot">
+            <div class="fallback"><div class="grain"></div><span class="who">@matuvenao</span><span class="play" aria-hidden="true"></span><span class="views cond">Shows<small>Uruguay y Argentina</small></span></div>
+            <video class="media" muted loop playsinline preload="metadata" src="media/matu-3.mp4" aria-label="Reel de Matu Venao"></video>
+            <span class="overlay"><span>@matuvenao</span><span>▶</span></span>
+          </div>
+          <span class="meta"><span>Matu Venao</span><span>Ver ↗</span></span>
+        </a>
+      </div>
+      <p class="src">Reproducciones según Instagram, noviembre 2026.</p>
+    </div>
+  </section>
+
+  <section class="statement">
+    <div class="wrap">
+      <h2 class="cond">Ninguna marca necesita lo <mark>mismo</mark></h2>
+      <p class="serif">Por eso no hay dos planes iguales.</p>
+      <p class="body">Elegís las piezas que te faltan y nosotros nos encargamos de que salgan bien y a tiempo. Si tu negocio cambia, sumamos o sacamos servicios sin vueltas.</p>
+    </div>
+  </section>
+
+  <section class="caps" id="servicios">
+    <div class="wrap">
+      <div class="label">Elegí lo que necesitás</div>
+      <div class="grid">
+        <ul class="words" role="tablist" aria-label="Servicios">
+          <li><button role="tab" id="t-ideamos" aria-selected="true" aria-controls="cap-panel" data-k="ideamos">Ideamos</button></li>
+          <li><button role="tab" id="t-grabamos" aria-selected="false" aria-controls="cap-panel" data-k="grabamos">Grabamos</button></li>
+          <li><button role="tab" id="t-editamos" aria-selected="false" aria-controls="cap-panel" data-k="editamos">Editamos</button></li>
+          <li><button role="tab" id="t-disenamos" aria-selected="false" aria-controls="cap-panel" data-k="disenamos">Diseñamos</button></li>
+          <li><button role="tab" id="t-publicamos" aria-selected="false" aria-controls="cap-panel" data-k="publicamos">Publicamos</button></li>
+          <li><button role="tab" id="t-respondemos" aria-selected="false" aria-controls="cap-panel" data-k="respondemos">Respondemos</button></li>
+          <li><button role="tab" id="t-medimos" aria-selected="false" aria-controls="cap-panel" data-k="medimos">Medimos</button></li>
+        </ul>
+        <div class="panel" id="cap-panel" role="tabpanel" aria-live="polite">
+          <p class="k">Estrategia y guiones</p>
+          <p class="d">Definimos qué tiene que decir tu marca, a quién y en qué formato. Te llevás ideas, ganchos y guiones listos para grabar.</p>
+          <ul class="l"><li>Análisis de tu cuenta y tu competencia</li><li>Pilares de contenido</li><li>Guiones para reels y stories</li></ul>
+        </div>
+      </div>
+      <div class="note">
+        <p class="serif">Contratá un servicio, varios o todos.</p>
+        <p>Algunos clientes solo necesitan que les editemos lo que graban. Otros quieren un paquete gráfico para arrancar, y otros nos dejan las redes completas. Te armamos una propuesta con lo justo.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="method" id="como">
+    <div class="wrap">
+      <div class="head">
+        <h2 class="cond">Cómo trabajamos</h2>
+        <p class="serif">Empezamos por tu negocio, no por un paquete.</p>
+      </div>
+      <div class="weeks">
+        <div class="week"><span class="n">Paso 1</span><h3 class="cond">Charla</h3><p>Nos contás qué hacés, cómo vendés hoy y qué te está costando en redes. Miramos tu cuenta juntos.</p></div>
+        <div class="week"><span class="n">Paso 2</span><h3 class="cond">Propuesta</h3><p>Te mandamos un plan con los servicios que de verdad necesitás, la frecuencia y el precio. Nada de relleno.</p></div>
+        <div class="week"><span class="n">Paso 3</span><h3 class="cond">Producción</h3><p>Hacemos lo acordado: ideas, rodaje, edición, diseño o publicación. Vos aprobás todo antes de que salga.</p></div>
+        <div class="week"><span class="n">Paso 4</span><h3 class="cond">Ajuste</h3><p>Cada mes miramos qué funcionó y ajustamos el plan. Si necesitás más o menos, se cambia.</p></div>
+      </div>
+      <p class="loop"><span aria-hidden="true">↻</span> El plan cambia cuando tu negocio cambia.</p>
+    </div>
+  </section>
+
+  <section class="talk" id="hablemos">
+    <div class="wrap grid">
+      <h2 class="serif">Hable<em>mos</em></h2>
+      <div class="side">
+        <p>Contanos qué hace tu emprendimiento y qué te está faltando. Te respondemos en el día con una propuesta a medida.</p>
+        <div class="contact-rows">
+          <div class="row"><span class="k">WhatsApp</span><span class="v" id="c-wa">+598 99 000 000</span><button class="copy" data-copy="c-wa" type="button">Copiar</button></div>
+          <div class="row"><span class="k">Email</span><span class="v" id="c-mail">hola@unico.uy</span><button class="copy" data-copy="c-mail" type="button">Copiar</button></div>
+          <div class="row"><span class="k">Instagram</span><span class="v">@unico.uy</span><span></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div class="f-logo">
+        <span class="cond">Único<br>Agencia</span>
+        <p>Agencia de redes a medida para emprendimientos. Hacemos lo que tu marca necesita.</p>
+      </div>
+      <div class="f-col"><h4>Sitio</h4><ul><li><a href="#trabajos">Trabajos</a></li><li><a href="#reels">Reels</a></li><li><a href="#servicios">Servicios</a></li><li><a href="#hablemos">Contacto</a></li></ul></div>
+      <div class="f-col"><h4>Clientes</h4><ul><li><a href="https://www.instagram.com/yipio/" target="_blank" rel="noopener">Yipio</a></li><li><a href="https://www.instagram.com/matuvenao/" target="_blank" rel="noopener">Matu Venao</a></li><li><a href="https://delipop.com.uy/" target="_blank" rel="noopener">Delipop</a></li></ul></div>
+      <div class="f-col"><h4>Estudio</h4><ul><li>Montevideo</li><li>Uruguay</li><li>Lun a vie · 9 a 18</li></ul></div>
+      <div class="f-col"><h4>Redes</h4><ul><li><a href="#hablemos">Instagram</a></li><li><a href="#hablemos">TikTok</a></li><li><a href="#hablemos">LinkedIn</a></li></ul></div>
+    </div>
+    <div class="f-base"><span>© Único 2026</span><span>Hecho en Montevideo</span></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Reels: each video reveals itself only once its file loads; otherwise the designed fallback stays. */
+  var vids = Array.prototype.slice.call(document.querySelectorAll('video.media'));
+  vids.forEach(function(v){
+    v.addEventListener('loadeddata', function(){
+      var slot = v.closest('.slot'); if(slot) slot.classList.add('ready');
+      if(!reduce && v.dataset.visible === '1'){ var p=v.play(); if(p&&p.catch) p.catch(function(){}); }
+    });
+    v.addEventListener('error', function(){ v.remove(); });
+  });
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        var v = e.target; v.dataset.visible = e.isIntersecting ? '1' : '0';
+        if(reduce || v.readyState < 2) return;
+        if(e.isIntersecting){ var p=v.play(); if(p&&p.catch) p.catch(function(){}); } else { v.pause(); }
+      });
+    }, {threshold:.25});
+    vids.forEach(function(v){ io.observe(v); });
+  }
+
+  /* Services menu */
+  var data = {
+    ideamos:{k:"Estrategia y guiones",d:"Definimos qué tiene que decir tu marca, a quién y en qué formato. Te llevás ideas, ganchos y guiones listos para grabar.",l:["Análisis de tu cuenta y tu competencia","Pilares de contenido","Guiones para reels y stories"]},
+    grabamos:{k:"Producción propia",d:"Vamos con cámara, luz y sonido a donde pasa tu negocio. Una jornada bien planificada rinde contenido para semanas.",l:["Rodajes en locación","Dirección de cámara para vos y tu equipo","Foto de producto y de ambiente"]},
+    editamos:{k:"Edición nativa para redes",d:"Cortamos pensando en los primeros tres segundos. Subtítulos, ritmo y diseño con tu identidad, en formato vertical. También editamos lo que grabás vos.",l:["Reels y TikToks","Edición de material propio","Subtítulos y versiones por plataforma"]},
+    disenamos:{k:"Paquetes gráficos",d:"Todo lo visual para que tu cuenta se vea profesional y reconocible, aunque publiques vos.",l:["Identidad visual para redes","Plantillas de posts y stories","Portadas de destacados","Piezas para lanzamientos y eventos"]},
+    publicamos:{k:"Calendario y publicación",d:"Armamos el calendario, escribimos los copies y publicamos en los horarios en que tu audiencia está mirando.",l:["Calendario aprobado por vos","Copies y hashtags","Programación en Instagram y TikTok"]},
+    respondemos:{k:"Community management",d:"Respondemos comentarios y mensajes con tu tono, y derivamos a tu WhatsApp las consultas que pueden ser una venta.",l:["Respuesta a comentarios y DMs","Moderación","Derivación de consultas a ventas"]},
+    medimos:{k:"Reporte mensual",d:"Cerramos cada mes con números simples: alcance, interacciones, consultas y qué piezas funcionaron.",l:["Métricas de alcance y crecimiento","Consultas generadas","Recomendaciones para el mes siguiente"]}
+  };
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.words button'));
+  var panel = document.getElementById('cap-panel');
+  function show(key){
+    var it = data[key]; if(!it) return;
+    tabs.forEach(function(b){ var on = b.dataset.k===key; b.setAttribute('aria-selected', on ? 'true':'false'); b.tabIndex = on ? 0 : -1; });
+    panel.setAttribute('aria-labelledby','t-'+key);
+    panel.querySelector('.k').textContent = it.k;
+    panel.querySelector('.d').textContent = it.d;
+    var ul = panel.querySelector('.l'); ul.innerHTML='';
+    it.l.forEach(function(t){ var li=document.createElement('li'); li.textContent=t; ul.appendChild(li); });
+  }
+  var auto = null, i = 0;
+  function stop(){ if(auto){ clearInterval(auto); auto=null; } }
+  tabs.forEach(function(b, idx){
+    b.addEventListener('click', function(){ stop(); i=idx; show(b.dataset.k); });
+    b.addEventListener('mouseenter', function(){ stop(); i=idx; show(b.dataset.k); });
+    b.addEventListener('keydown', function(e){
+      var n = null;
+      if(e.key==='ArrowDown'||e.key==='ArrowRight') n=(idx+1)%tabs.length;
+      if(e.key==='ArrowUp'||e.key==='ArrowLeft') n=(idx-1+tabs.length)%tabs.length;
+      if(n!==null){ e.preventDefault(); stop(); i=n; show(tabs[n].dataset.k); tabs[n].focus(); }
+    });
+  });
+  show('ideamos');
+  if(!reduce){ auto = setInterval(function(){ i=(i+1)%tabs.length; show(tabs[i].dataset.k); }, 3200); }
+
+  /* Copy buttons */
+  document.querySelectorAll('.copy').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var el = document.getElementById(btn.dataset.copy); if(!el) return;
+      var txt = el.textContent.trim();
+      function selectIt(){ var r=document.createRange(); r.selectNodeContents(el); var s=window.getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent='Seleccionado'; }
+      try{
+        navigator.clipboard.writeText(txt).then(function(){ btn.textContent='Copiado'; setTimeout(function(){btn.textContent='Copiar';},1600); }, selectIt);
+      }catch(e){ selectIt(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
